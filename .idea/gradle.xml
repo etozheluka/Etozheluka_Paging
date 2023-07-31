@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/manual_paging" />
             <option value="$PROJECT_DIR$/paging_adapter" />
+            <option value="$PROJECT_DIR$/paging_adapter_advanced" />
           </set>
         </option>
       </GradleProjectSettings>

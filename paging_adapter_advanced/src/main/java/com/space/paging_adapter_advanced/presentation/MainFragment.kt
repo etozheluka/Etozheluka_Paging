@@ -1,4 +1,4 @@
-package com.space.etozheluka_paging.ui
+package com.space.paging_adapter_advanced.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,11 +14,9 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
 
-
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModel()
-
     private val movieAdapter by lazy { MoviesAdapter() }
 
     override fun onCreateView(
@@ -31,7 +29,6 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setAdapter()
         getMovies()
     }
@@ -40,10 +37,9 @@ class MainFragment : Fragment() {
      * This method is used to get the movies from the view model
      */
     private fun getMovies() {
-
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.fetchMovies().collect {
+                viewModel.getPopularMovies().collect {
                     movieAdapter.submitData(it)
                 }
             }
