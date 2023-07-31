@@ -5,5 +5,5 @@ import com.space.etozheluka_paging.domain.repository.MoviesRepository
 
 class GetMoviesUseCase(private val repository: MoviesRepository) {
 
-    suspend fun invoke() = repository.moviePagingSource()
+    fun invoke() = repository.moviePagingSource()
 }

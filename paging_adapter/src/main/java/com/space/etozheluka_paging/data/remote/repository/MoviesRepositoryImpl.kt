@@ -10,5 +10,5 @@ class MoviesRepositoryImpl(
     RequestHandler(),
     MoviesRepository {
 
-    override suspend fun moviePagingSource(): MoviesPagingSource = MoviesPagingSource(serviceApi)
+    override fun moviePagingSource(): MoviesPagingSource = MoviesPagingSource(serviceApi)
 }
